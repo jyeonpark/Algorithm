@@ -13,6 +13,27 @@
 
 
 
+# 방법 2
+# n, m = map(int, input().split())
+# weight = list(map(int, input().split()))
+# weight.sort()
+
+# count = 0 # 볼링공 조합 개수
+# sequential = 1 # 같은 숫자 개수
+
+# for i in range(n-1) :
+# 	# 같은 수 중 마지막 숫자
+# 	if weight[i] != weight[i+1] :
+# 		# 뒤에 있는 숫자 개수 * 자신의 같은 숫자 개수
+# 		count += (n-1-i) * sequential
+# 		sequential = 1
+# 	else :
+# 		sequential += 1
+
+# print(count)
+
+
+
 # 단일 for문 2개로 만들기
 
 n, m = map(int, input().split())

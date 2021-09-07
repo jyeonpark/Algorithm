@@ -16,17 +16,6 @@
 n,k = map(int, input().split())
 count = 0
 
-# 방법1
-# while(True):
-#     if(n == 1):
-#         break
-#     if n % k == 0 :
-#         n = n // k
-#     else :
-#         n = n - 1
-#     count += 1
-
-# 방법2
 while(True):
     # N이 k로 나누어 떨어지는 수가 될 때 까지 1씩 빼기
     target = (n//k) * k
@@ -36,6 +25,16 @@ while(True):
         break
     count += 1
     n //= k
+
+# 방법2
+# while(n >= k):
+# 	if(n % k == 0):
+# 		n //= k
+# 		count += 1
+# 	else:
+# 		count += n % k
+# 		n -= n % k
+
 # 남은 수에 대해 1씩 빼기
 count += (n - 1)
 print(count)

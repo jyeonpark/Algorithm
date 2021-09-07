@@ -1,27 +1,15 @@
+str = list(map(int,input()))
 
-s = list(map(int,input()))
-count0 = s.count(0)
-count1 = s.count(1)
+one = 0 # 0을 뒤집는 횟수
+zero = 0 # 1을 뒤집는 횟수
+last = -1 # 이전 숫자
 
-# 한 번에 뒤집을 개수
-count = 0
-total = 0
-
-if count0 > count1 :
-    num = 0
-else:
-    num = 1
-
-for i in s :
-    if i == num :
-        if count>0 :
-            total += 1
-        count = 0
-
-    else :
-        count += 1
-
-if count >0 :
-    total +=1
-
-print(total)
+for i in str :
+    # i가 1이고, 연속된 1이 아닐 때
+	if (i == 0 and last != 0):
+		zero += 1
+    # i가 0이고, 연속된 0이 아닐 때
+	elif (i == 1 and last != 1):
+		one += 1
+	last = i
+print(min(zero, one))
